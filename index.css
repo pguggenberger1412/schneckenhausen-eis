@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #fcf9f4; /* Warmer, cremiger Hintergrund */
+    color: #2b2b2b;
+}
+
+header {
+    text-align: center;
+    padding: 40px 20px 20px;
+}
+
+h1 {
+    font-size: clamp(2.2rem, 6vw, 3.2rem);
+    color: #3b2c24; /* Schokoladiger Dunkelton */
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+.subtitle {
+    margin-top: 8px;
+    font-size: 1.1rem;
+    color: #7a6a5d;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    flex: 1;
+}
+
+/* Raster-Layout für Rezeptkarten */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.recipe-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+    border: 1px solid #efe8de;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header {
+    padding: 20px 20px 10px;
+}
+
+.card-header h2 {
+    font-size: 1.5rem;
+    color: #3b2c24;
+    margin-top: 10px;
+}
+
+/* Badges für Creami-Programme */
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge.gelato { background-color: #fde8e8; color: #9b2c2c; }
+.badge.sorbet { background-color: #e6fffa; color: #234e52; }
+.badge.protein { background-color: #ebf8ff; color: #2b6cb0; }
+
+.card-body {
+    padding: 0 20px 20px;
+}
+
+.creami-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    background-color: #f7f3ed;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: #5a4c42;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.1rem;
+    color: #3b2c24;
+    margin: 15px 0 8px;
+    border-bottom: 2px solid #f4ede2;
+    padding-bottom: 4px;
+}
+
+.ingredients, .steps {
+    padding-left: 20px;
+    color: #4a4039;
+    font-size: 0.95rem;
+}
+
+.ingredients li, .steps li {
+    margin-bottom: 4px;
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 25px 20px;
+    font-size: 0.85rem;
+    color: #8c7d70;
+}
+
+/* Responsives Grid: Ab Tablet 2-Spalten, ab Desktop 3-Spalten */
+@media (min-width: 650px) {
+    .recipe-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1000px) {
+    .recipe-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
